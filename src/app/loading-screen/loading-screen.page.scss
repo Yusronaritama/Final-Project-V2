@@ -1,0 +1,17 @@
+ion-content{
+    --background: linear-gradient(135deg, #064420 0%, #0FAA50  100%);
+  }
+
+.loading-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%; // isi seluruh tinggi layar
+    text-align: center;
+  }
+  
+  .logo {
+    width: 150px;
+    margin-bottom: 20px;
+  }

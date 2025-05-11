@@ -1,0 +1,71 @@
+<ion-header>
+  <ion-toolbar color="success" class="custom-toolbar">
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+
+    <ion-title>
+      <img src="assets/icon/Icon.png" alt="Logo" class="logo-header" />
+    </ion-title>
+
+    <ion-buttons slot="end">
+      <ion-button>
+        <ion-icon slot="icon-only" name="person-circle-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <!-- Gambar tank -->
+  <div class="image-container">
+    <img src="assets/image/tank.jpeg" alt="Honda BR-V" />
+  </div>
+
+  <!-- Filter mobil -->
+  <div class="filter-container">
+    <ion-label>Car Type</ion-label>
+    <div class="car-type-buttons">
+      <button class="car-button">
+        <img src="assets/cars/tesla.png" alt="Tesla" />
+        <span>Tesla</span>
+      </button>
+      <button class="car-button">
+        <img src="assets/cars/nissan.png" alt="Nissan" />
+        <span>Nissan</span>
+      </button>
+      <button class="car-button">
+        <img src="assets/cars/toyota.png" alt="Toyota" />
+        <span>Toyota</span>
+      </button>
+      <button class="car-button">
+        <img src="assets/cars/bmw.png" alt="BMW" />
+        <span>BMW</span>
+      </button>
+    </div>
+  </div>
+
+  <!-- Box Populer Car -->
+  <div class="populer-car-container">
+    <h2>Populer Car</h2>
+    <!-- Contoh kartu mobil -->
+    <ion-card class="car-card">
+      <ion-card-header>
+        <ion-chip color="danger" outline>Toyota</ion-chip>
+        <ion-badge color="success" class="status-badge">Tersedia</ion-badge>
+      </ion-card-header>
+      <ion-card-content>
+        <div class="car-info">
+          <img src="assets/images/avanza-orange.png" alt="Avanza" />
+          <div class="car-details">
+            <h3>Avanza</h3>
+            <p>MPV • 2015 • 7 seats</p>
+            <p class="price">Rp 350.000 / 24 Jam</p>
+            <ion-button color="warning" expand="block">Sewa Sekarang</ion-button>
+          </div>
+        </div>
+      </ion-card-content>
+    </ion-card>
+    <!-- Tambah kartu mobil lain sesuai kebutuhan -->
+  </div>
+</ion-content>

@@ -1,0 +1,39 @@
+<ion-app>
+<!-- MENU KIRI -->
+<ion-menu side="start" menuId="mainMenu" contentId="main-content">
+  <ion-header>
+    <ion-toolbar color="primary">
+      <ion-title>Menu</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <ion-content>
+    <ion-list>
+      <ion-item routerLink="/home">Beranda</ion-item>
+      <ion-item routerLink="/mobil">Mobil</ion-item>
+      <ion-item routerLink="/riwayat">Riwayat</ion-item>
+    </ion-list>
+  </ion-content>
+</ion-menu>
+
+<!-- MENU KANAN (SETTING) -->
+<ion-menu side="end" menuId="settingsMenu" contentId="main-content">
+  <ion-header>
+    <ion-toolbar color="secondary">
+      <ion-title>Pengaturan</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <ion-content>
+    <ion-list>
+      <ion-item>Profil</ion-item>
+      <ion-item>Notifikasi</ion-item>
+      <ion-item>Bahasa</ion-item>
+      <ion-item>Logout</ion-item>
+    </ion-list>
+  </ion-content>
+</ion-menu>
+
+<!-- KONTEN UTAMA -->
+<ion-router-outlet id="main-content"></ion-router-outlet>
+
+  <ion-router-outlet></ion-router-outlet>
+</ion-app>

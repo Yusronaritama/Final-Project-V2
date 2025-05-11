@@ -1,0 +1,99 @@
+<ion-content [fullscreen]="true" class="login-background">
+  <div class="login-container" [class.signup-mode]="isSignup">
+
+    <!-- Logo -->
+    <img src="assets/icon/Icon.png" alt="GoRentall Logo" class="logo" />
+
+    <!-- Login Form -->
+    <div class="form-box login-box" *ngIf="!isSignup">
+      <h2>Login</h2>
+      <ion-item>
+        <ion-icon name="mail-outline" slot="start"></ion-icon>
+        <ion-input type="email" placeholder="Email"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-icon name="lock-closed-outline" slot="start"></ion-icon>
+        <ion-input type="password" placeholder="Password"></ion-input>
+      </ion-item>
+
+      <ion-button expand="block" color="success">Login</ion-button>
+      <p class="toggle-link">
+        <ion-button size="block" color="success" fill="solid" (click)="toggleMode()">Daftar di sini</ion-button>
+      </p>
+      
+    </div>
+
+    <!-- Signup Form -->
+    <div class="form-box signup-box" *ngIf="isSignup">
+      <h2>Sign Up</h2>
+
+      // nama lengkap
+      <ion-item>
+        <ion-icon name="person-outline" slot="start"></ion-icon>
+        <ion-input type="text" placeholder="Nama Lengkap"></ion-input>
+      </ion-item>
+      // nama lengkap
+
+      // nomor telepon  
+      <ion-item>
+        <ion-icon name="call-outline" slot="start"></ion-icon>
+        <ion-input type="tel" placeholder="Nomor Telepon"></ion-input>
+      </ion-item>
+      // nomor telepon
+
+      // alamat
+      <ion-item>
+        <ion-icon name="home-outline" slot="start"></ion-icon>
+        <ion-input type="text" placeholder="Alamat Lengkap"></ion-input>
+      </ion-item>
+      // alamat
+
+      // tanggal lahir
+      <ion-item>
+        <ion-icon name="calendar-outline" slot="start"></ion-icon>
+        <ion-input id="birthDateInput" [value]="birthDateDisplay" placeholder="Tanggal Lahir" readonly></ion-input>
+        <ion-popover trigger="birthDateInput" size="cover">
+          <ng-template>
+            <ion-datetime
+              presentation="date"
+              [(ngModel)]="birthDate"
+              (ionChange)="onDateChange($event)"
+              show-default-buttons="true"
+            ></ion-datetime>
+          </ng-template>
+        </ion-popover>
+      </ion-item>
+      // tanggal lahir
+      
+      
+      <ion-item>
+        <ion-label>
+          Jenis Kelamin <small style="color: gray; font-weight: normal;">(Opsional)</small>
+        </ion-label>
+        <ion-icon name="male-female-outline" slot="start"></ion-icon>
+        <ion-select placeholder="Pilih jenis kelamin">
+          <ion-select-option value="male">Laki-laki</ion-select-option>
+          <ion-select-option value="female">Perempuan</ion-select-option>
+        </ion-select>
+      </ion-item>
+      
+
+      <ion-item>
+        <ion-icon name="mail-outline" slot="start"></ion-icon>
+        <ion-input type="email" placeholder="Email"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-icon name="lock-closed-outline" slot="start"></ion-icon>
+        <ion-input type="password" placeholder="Password"></ion-input>
+      </ion-item>
+
+      <ion-button expand="block" color="success">Daftar</ion-button>
+      <p class="toggle-link">
+        <ion-button size="block" color="success" fill="solid" (click)="toggleMode()">Login</ion-button>
+      </p>
+    </div>
+
+  </div>
+</ion-content>
