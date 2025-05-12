@@ -1,4 +1,4 @@
-.login-background {
+.register-background {
   --background: linear-gradient(135deg, #064420 0%, #0FAA50 100%);
 }
 
@@ -10,7 +10,7 @@ ion-content {
   height: 100%;
 }
 
-.login-container {
+.register-container {
   background: #c3f4c3;
   margin: 120px auto;
   padding: 20px;
@@ -31,7 +31,8 @@ ion-item {
   margin-bottom: 14px;
 }
 
-ion-input {
+ion-input,
+ion-select {
   --color: #2eaa63;
 }
 

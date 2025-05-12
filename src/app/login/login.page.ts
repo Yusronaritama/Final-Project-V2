@@ -1,5 +1,6 @@
-import { Component, ViewChild } from '@angular/core';
-import { IonDatetime } from '@ionic/angular';
+import { Component } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { Router } from '@angular/router';
 
 @Component({
   standalone: false,
@@ -8,19 +9,20 @@ import { IonDatetime } from '@ionic/angular';
   styleUrls: ['./login.page.scss'],
 })
 export class LoginPage {
-  isSignup = false;
+  email = '';
+  password = '';
 
-  birthDate: string = '';
+  constructor(private http: HttpClient, private router: Router) {}
 
-  // Tambahkan tanda '!' untuk non-null assertion agar TypeScript tidak error
-  @ViewChild('birthPicker', { static: false }) birthPicker!: IonDatetime;
-  birthDateDisplay: string = '';
-
-  toggleMode() {
-    this.isSignup = !this.isSignup;
-  }
-  onDateChange(event: any) {
-    this.birthDateDisplay = event.detail.value ? new Date(event.detail.value).toLocaleDateString('id-ID') : '';
-    // Simpan tanggal lahir sesuai kebutuhan Anda
+  login() {
+    this.http.post('http://localhost:8000/api/login', {
+      email: this.email,
+      password: this.password
+    }).subscribe((res: any) => {
+      localStorage.setItem('token', res.token);
+      this.router.navigate(['/home']); // Ganti dengan halaman utama kamu
+    }, err => {
+      alert('Login gagal: ' + err.error.message);
+    });
   }
 }

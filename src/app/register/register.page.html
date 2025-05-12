@@ -1,0 +1,53 @@
+<ion-content [fullscreen]="true">
+  <div class="register-container">
+    <img src="assets/icon/Icon.png" alt="GoRentall Logo" class="logo" />
+    <div class="form-box signup-box">
+      <h2>Sign Up</h2>
+
+      <ion-item>
+        <ion-icon name="person-outline" slot="start"></ion-icon>
+        <ion-input type="text" placeholder="Nama Lengkap" [(ngModel)]="name"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-icon name="call-outline" slot="start"></ion-icon>
+        <ion-input type="tel" placeholder="Nomor Telepon" [(ngModel)]="no_hp"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-icon name="home-outline" slot="start"></ion-icon>
+        <ion-input type="text" placeholder="Alamat Lengkap" [(ngModel)]="alamat"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-icon name="calendar-outline" slot="start"></ion-icon>
+        <ion-input id="birthDateInput" [value]="birthDateDisplay" placeholder="Tanggal Lahir" readonly></ion-input>
+        <ion-popover trigger="birthDateInput" size="cover">
+          <ng-template>
+            <ion-datetime
+              presentation="date"
+              [(ngModel)]="tanggal_lahir"
+              (ionChange)="onDateChange($event)"
+              show-default-buttons="true"
+            ></ion-datetime>
+          </ng-template>
+        </ion-popover>
+      </ion-item>
+
+      <ion-item>
+        <ion-icon name="mail-outline" slot="start"></ion-icon>
+        <ion-input type="email" placeholder="Email" [(ngModel)]="email"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-icon name="lock-closed-outline" slot="start"></ion-icon>
+        <ion-input type="password" placeholder="Password" [(ngModel)]="password"></ion-input>
+      </ion-item>
+
+      <ion-button expand="block" color="success" (click)="register()">Daftar</ion-button>
+      <p class="toggle-link">
+        <ion-router-link routerLink="/login">Login</ion-router-link>
+      </p>
+    </div>
+  </div>
+</ion-content>
