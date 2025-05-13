@@ -27,18 +27,23 @@ export class RegisterPage {
   }
 
   register() {
-    this.http.post('http://localhost:8000/api/register', {
-      name: this.name,
-      no_hp: this.no_hp,
-      alamat: this.alamat,
-      tanggal_lahir: this.tanggal_lahir,
-      email: this.email,
-      password: this.password,
-    }).subscribe((res: any) => {
-      localStorage.setItem('token', res.token);
-      this.router.navigate(['/home']);
-    }, err => {
-      alert('Gagal daftar: ' + JSON.stringify(err.error));
-    });
+    this.http
+      .post('http://localhost:8000/api/register', {
+        name: this.name,
+        no_hp: this.no_hp,
+        alamat: this.alamat,
+        tanggal_lahir: this.tanggal_lahir,
+        email: this.email,
+        password: this.password,
+      })
+      .subscribe({
+        next: (res: any) => {
+          localStorage.setItem('token', res.token); // ✅ Simpan token
+          this.router.navigate(['/login']); // ✅ Arahkan ke halaman utama
+        },
+        error: (err) => {
+          alert('Gagal daftar: ' + JSON.stringify(err.error));
+        },
+      });
   }
 }

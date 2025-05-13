@@ -15,14 +15,21 @@ export class LoginPage {
   constructor(private http: HttpClient, private router: Router) {}
 
   login() {
-    this.http.post('http://localhost:8000/api/login', {
-      email: this.email,
-      password: this.password
-    }).subscribe((res: any) => {
-      localStorage.setItem('token', res.token);
-      this.router.navigate(['/home']); // Ganti dengan halaman utama kamu
-    }, err => {
-      alert('Login gagal: ' + err.error.message);
-    });
+    this.http
+      .post('http://localhost:8000/api/login', {
+        email: this.email,
+        password: this.password,
+      })
+      .subscribe({
+        next: (res: any) => {
+          localStorage.setItem('token', res.token);
+          this.router.navigate(['/home']);
+        },
+        error: (err) => {
+          alert(
+            'Login gagal: ' + (err.error.message || 'Cek email dan password')
+          );
+        },
+      });
   }
 }
