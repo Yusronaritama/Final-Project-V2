@@ -1,3 +1,33 @@
+.custom-toolbar {
+  --background: #00B04A;
+}
+.ion-padding {
+  --background: white;
+}
+
+.logo-header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: auto;
+}
+
+.logo-header img {
+  height: 200px; /* Sesuaikan ukuran logo */
+  width: auto;
+}
+
+.custom-toolbar {
+  width: 100%;
+  height: 105px;
+  display: flex;
+  justify-content: center; /* Menjaga elemen di tengah secara horizontal */
+  align-items: center; /* Menjaga elemen di tengah secara vertikal */
+  position: relative; 
+}
+
+
+
 .image-container img {
   width: 100%;
   border-radius: 12px;
