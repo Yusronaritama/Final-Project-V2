@@ -1,8 +1,12 @@
+/* ===== Custom Toolbar ===== */
 .custom-toolbar {
   --background: #00B04A;
-}
-.ion-padding {
-  --background: white;
+  width: 100%;
+  height: 105px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
 }
 
 .logo-header {
@@ -13,27 +17,24 @@
 }
 
 .logo-header img {
-  height: 200px; /* Sesuaikan ukuran logo */
+  height: 100px; // Ukuran lebih wajar di mobile
   width: auto;
 }
 
-.custom-toolbar {
-  width: 100%;
-  height: 105px;
-  display: flex;
-  justify-content: center; /* Menjaga elemen di tengah secara horizontal */
-  align-items: center; /* Menjaga elemen di tengah secara vertikal */
-  position: relative; 
+/* ===== Content Background ===== */
+.ion-padding {
+  --background: white;
 }
 
-
-
+/* ===== Image Container ===== */
 .image-container img {
   width: 100%;
+  height: auto;
   border-radius: 12px;
   margin-bottom: 20px;
 }
 
+/* ===== Filter Mobil Section ===== */
 .filter-container {
   background-color: white;
   padding: 10px;
@@ -51,8 +52,9 @@
 
 .car-type-buttons {
   display: flex;
-  justify-content: space-around;
-  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
 }
 
 .car-button {
@@ -81,9 +83,10 @@
 }
 
 .car-button:hover {
-  box-shadow: 0 0 8px rgba(0,0,0,0.2);
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
 }
 
+/* ===== Populer Car Section ===== */
 .populer-car-container {
   margin-top: 10px;
 }
@@ -95,12 +98,18 @@
 .car-info {
   display: flex;
   align-items: center;
+  gap: 15px;
+  flex-wrap: wrap;
 }
 
 .car-info img {
   width: 120px;
   border-radius: 8px;
-  margin-right: 15px;
+}
+
+.car-details {
+  flex: 1;
+  min-width: 180px;
 }
 
 .car-details h3 {
@@ -124,4 +133,51 @@
   height: 24px;
   padding: 0 8px;
   align-self: center;
+}
+
+/* ===== Responsive Breakpoints ===== */
+@media screen and (max-width: 768px) {
+  .logo-header img {
+    height: 60px;
+  }
+
+  .car-info {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .car-info img {
+    width: 80%;
+    margin: 0 auto;
+  }
+
+  .car-details {
+    width: 100%;
+    text-align: center;
+  }
+
+  .car-type-buttons {
+    justify-content: center;
+    gap: 8px;
+  }
+
+  .car-button {
+    width: 45%;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .car-button {
+    width: 48%;
+  }
+
+  .price {
+    font-size: 1rem;
+  }
+
+  .status-badge {
+    font-size: 0.7rem;
+    height: 20px;
+  }
 }
