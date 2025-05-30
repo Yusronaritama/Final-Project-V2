@@ -43,7 +43,11 @@ const routes: Routes = [
   {
     path: 'loading-screen',
     loadChildren: () => import('./loading-screen/loading-screen.module').then(m => m.LoadingScreenPageModule)
+  },  {
+    path: 'profile',
+    loadChildren: () => import('./profile/profile.module').then( m => m.ProfilePageModule)
   },
+
 ];
 
 @NgModule({

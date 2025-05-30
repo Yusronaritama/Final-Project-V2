@@ -1,0 +1,54 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/home"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Rental Details</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="profile-container">
+    <ion-card class="profile-card">
+      <ion-card-header>
+        <ion-card-subtitle>Telukjambe Timur, Karawang</ion-card-subtitle>
+        <ion-card-title>John Doe</ion-card-title>
+      </ion-card-header>
+
+      <ion-card-content>
+        <ion-avatar class="custom-avatar">
+          <img src="assets/icon/logo1.png" alt="Avatar">
+        </ion-avatar>
+        <ion-button expand="full" class="change-avatar">Change Avatar</ion-button>
+
+        <ion-item lines="full" class="profile-item">
+          <ion-label position="floating">Full Name</ion-label>
+          <ion-input value="John Doe" disabled></ion-input>
+        </ion-item>
+
+        <ion-item lines="full" class="profile-item">
+          <ion-label position="floating">Phone Number</ion-label>
+          <ion-input value="+62 812 3456 7890" disabled></ion-input>
+        </ion-item>
+
+        <ion-item lines="full" class="profile-item">
+          <ion-label position="floating">Email Address</ion-label>
+          <ion-input value="johndoe@example.com" disabled></ion-input>
+        </ion-item>
+
+        <ion-item lines="full" class="profile-item">
+          <ion-label position="floating">Address</ion-label>
+          <ion-input value="Jl. Raya Serpong No. 123, Tangerang Selatan, Banten 15310" disabled></ion-input>
+        </ion-item>
+
+        <ion-item lines="none">
+          <ion-button expand="full" color="primary" class="change-password">Change Password</ion-button>
+        </ion-item>
+
+        <ion-item lines="none">
+          <ion-button expand="full" color="danger" class="logout">Logout</ion-button>
+        </ion-item>
+      </ion-card-content>
+    </ion-card>
+  </div>
+</ion-content>
